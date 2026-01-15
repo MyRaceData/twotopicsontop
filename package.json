@@ -13,14 +13,14 @@
   "scripts": {
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
-    "lint:css": "pnpm stylelint assets/stylesheets/**/*.{css,scss} --allow-empty-input",
-    "lint:css:fix": "pnpm stylelint --fix assets/stylesheets/**/*.{css,scss} --allow-empty-input",
+    "lint:css": "pnpm stylelint assets/stylesheets/**/*.scss --allow-empty-input",
+    "lint:css:fix": "pnpm stylelint --fix assets/stylesheets/**/*.scss --allow-empty-input",
     "lint:js": "eslint {assets,admin/assets,test}/javascripts --cache --no-error-on-unmatched-pattern",
     "lint:js:fix": "eslint --fix {assets,admin/assets,test}/javascripts --no-error-on-unmatched-pattern",
     "lint:hbs": "ember-template-lint {assets,admin/assets,test}/javascripts/**/*.gjs --no-error-on-unmatched-pattern",
     "lint:hbs:fix": "ember-template-lint --fix {assets,admin/assets,test}/javascripts/**/*.gjs --no-error-on-unmatched-pattern",
-    "lint:prettier": "pnpm prettier --check assets/stylesheets/**/*.{css,scss} {assets,admin/assets,test}/javascripts/**/*.{js,gjs} --no-error-on-unmatched-pattern",
-    "lint:prettier:fix": "pnpm prettier -w assets/stylesheets/**/*.{css,scss} {assets,admin/assets,test}/javascripts/**/*.{js,gjs} --no-error-on-unmatched-pattern",
+    "lint:prettier": "pnpm prettier --check assets/stylesheets/**/*.scss {assets,admin/assets,test}/javascripts/**/*.{js,gjs} --no-error-on-unmatched-pattern",
+    "lint:prettier:fix": "pnpm prettier -w assets/stylesheets/**/*.scss {assets,admin/assets,test}/javascripts/**/*.{js,gjs} --no-error-on-unmatched-pattern",
     "lint:glint": "ember-tsc -b"
   },
   "engines": {
