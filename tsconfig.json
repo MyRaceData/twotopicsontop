@@ -1,0 +1,16 @@
+{
+  "extends": "discourse/tsconfig-plugin",
+  "include": [
+    "assets/javascripts/**/*",
+    "test/javascripts/**/*",
+    "node_modules/discourse/declarations/**/*"
+  ],
+  "compilerOptions": {
+    "types": ["discourse/external-types"],
+    "paths": {
+      "discourse/plugins/discourse-plugin-skeleton/*": [
+        "./assets/javascripts/*"
+      ]
+    }
+  }
+}
