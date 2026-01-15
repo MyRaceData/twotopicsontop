@@ -1,6 +1,7 @@
 {
   "extends": "discourse/tsconfig-plugin",
   "include": [
+    "admin/assets/javascripts/**/*",
     "assets/javascripts/**/*",
     "test/javascripts/**/*",
     "node_modules/discourse/declarations/**/*"
@@ -10,6 +11,9 @@
     "paths": {
       "discourse/plugins/discourse-plugin-skeleton/*": [
         "./assets/javascripts/*"
+      ],
+      "discourse/plugins/discourse-plugin-skeleton/admin/*": [
+        "./admin/assets/javascripts/admin/*"
       ]
     }
   }
