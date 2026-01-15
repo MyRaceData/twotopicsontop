@@ -3,11 +3,25 @@
   "devDependencies": {
     "@discourse/lint-configs": "2.32.0",
     "@glint/ember-tsc": "1.0.9",
+    "concurrently": "^9.2.1",
     "discourse": "npm:@discourse/types@2026.1.0-a5a0839",
     "ember-template-lint": "7.9.1",
     "eslint": "9.37.0",
     "prettier": "3.6.2",
     "stylelint": "16.25.0"
+  },
+  "scripts": {
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
+    "lint:css": "pnpm stylelint 'assets/stylesheets/**/*.{css,scss}'",
+    "lint:css:fix": "pnpm stylelint --fix 'assets/stylesheets/**/*.{css,scss}'",
+    "lint:js": "eslint admin/assets/javascripts assets/javascripts test/javascripts --cache --no-error-on-unmatched-pattern",
+    "lint:js:fix": "eslint --fix admin/assets/javascripts assets/javascripts test/javascripts --no-error-on-unmatched-pattern",
+    "lint:hbs": "ember-template-lint 'admin/assets/javascripts/**/*.gjs' 'assets/javascripts/**/*.gjs' 'test/javascripts/**/*.gjs'",
+    "lint:hbs:fix": "ember-template-lint 'admin/assets/javascripts/**/*.gjs' 'assets/javascripts/**/*.gjs' 'test/javascripts/**/*.gjs' --fix",
+    "lint:prettier": "pnpm prettier --list-different 'assets/stylesheets/**/*.{css,scss}' 'admin/assets/javascripts/**/*.{js,gjs}' 'assets/javascripts/**/*.{js,gjs}' 'test/javascripts/**/*.{js,gjs}'",
+    "lint:prettier:fix": "pnpm prettier -w --no-error-on-unmatched-pattern 'assets/stylesheets/**/*.{css,scss}' 'admin/assets/javascripts/**/*.{js,gjs}' 'assets/javascripts/**/*.{js,gjs}' 'test/javascripts/**/*.{js,gjs}'",
+    "lint:glint": "ember-tsc -b"
   },
   "engines": {
     "node": ">= 22",
