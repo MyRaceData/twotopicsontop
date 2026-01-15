@@ -15,8 +15,8 @@ importers:
         specifier: 1.0.9
         version: 1.0.9(typescript@5.9.3)
       discourse:
-        specifier: npm:@discourse/types@0.0.2
-        version: '@discourse/types@0.0.2'
+        specifier: npm:@discourse/types@2026.1.0-a5a0839
+        version: '@discourse/types@2026.1.0-a5a0839'
       ember-template-lint:
         specifier: 7.9.1
         version: 7.9.1
@@ -190,8 +190,8 @@ packages:
       prettier: 3.6.2
       stylelint: 16.24.0
 
-  '@discourse/types@0.0.2':
-    resolution: {integrity: sha512-5ryj14oO+52VESR72YBJ4hHMz9CJGbOA9oDzFSlKayK4aVz7cQYE81rKvNP9udqnqYxKfE6ZA8yIpJV6WtAH9w==}
+  '@discourse/types@2026.1.0-a5a0839':
+    resolution: {integrity: sha512-CBxJDxoJXDu8Yi+ietMYxEbO+I3FXAfYfRr5ku9lL7DcJXYokeds8KUoPnDjJgyAkQqp35e7VtLLfuREHewF1w==}
     engines: {node: '>= 18', npm: please-use-pnpm, pnpm: ^10, yarn: please-use-pnpm}
 
   '@dual-bundle/import-meta-resolve@4.2.1':
@@ -2029,7 +2029,7 @@ snapshots:
       - postcss
       - supports-color
 
-  '@discourse/types@0.0.2': {}
+  '@discourse/types@2026.1.0-a5a0839': {}
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
