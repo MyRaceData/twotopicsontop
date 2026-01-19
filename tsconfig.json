@@ -15,6 +15,7 @@
       "discourse/plugins/discourse-plugin-skeleton/admin/*": [
         "./admin/assets/javascripts/admin/*"
       ],
+      "admin/*": ["./node_modules/discourse/declarations/admin/*"],
       "float-kit/*": ["./node_modules/discourse/declarations/float-kit/*"],
       "select-kit/*": ["./node_modules/discourse/declarations/select-kit/*"],
       "truth-helpers": [
