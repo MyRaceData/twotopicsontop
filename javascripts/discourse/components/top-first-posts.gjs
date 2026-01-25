@@ -10,7 +10,7 @@ export default class TopFirstPosts extends Component {
   }
 
   async loadPosts() {
-    let ids = [123, 456]; // replace with your topic IDs
+    let ids = [98, 239]; // replace with your topic IDs
     let posts = [];
     for (let id of ids) {
       let res = await fetch(`/t/${id}.json`);
