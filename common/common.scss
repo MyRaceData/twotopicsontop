@@ -9,3 +9,13 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
+
+.sidebar-wrapper {
+    background-color: rgb(0,0,0,.5);
+}
+.upcoming-events-list__event-date .month {
+    color: rgba(255, 0, 0, 1);
+}
+.upcoming-events-list__event-time {
+    visibility: hidden;
+}
