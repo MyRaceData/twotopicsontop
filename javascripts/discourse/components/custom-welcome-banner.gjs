@@ -1,16 +1,37 @@
-import Component from "@glimmer/component";
-import { service } from "@ember/service";
+// theme/desktop/discovery-list-container-top.gjs
 
-export default class CustomWelcomeBanner extends Component {
-  @service currentUser;
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
+
+class FirstPosts extends Component {
+  @tracked posts = [];
+
+  constructor() {
+    super(...arguments);
+    this.loadPosts();
+  }
+
+  async loadPosts() {
+    let topicIds = [123, 456]; // ← Replace these with your topic IDs
+    let posts = [];
+    for (let id of topicIds) {
+      const res = await fetch(`/t/${id}.json`);
+      const data = await res.json();
+      if (data.post_stream && data.post_stream.posts.length > 0) {
+        posts.push(data.post_stream.posts[0]);
+      }
+    }
+    this.posts = posts;
+  }
 
   <template>
-    <div class="custom-welcome-banner">
-      {{#if this.currentUser}}
-        Welcome back @{{this.currentUser.username}}.
-      {{else}}
-        Welcome to our community.
-      {{/if}}
-    </div>
-  </template>
+    {{#each this.posts as |post|}}
+      <div class="first-post-preview">
+        <h4>{{post.topic_title}}</h4>
+        {{{post.cooked}}}
+      </div>
+    {{/each}}
+  </template>;
 }
+
+export default FirstPosts;
