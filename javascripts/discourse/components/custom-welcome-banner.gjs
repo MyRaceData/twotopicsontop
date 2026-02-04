@@ -6,7 +6,7 @@ import { tracked } from "@glimmer/tracking";
 class FirstPosts extends Component {
   @tracked posts = [];
 
-  constructor() {
+  //constructor() {
     super(...arguments);
     this.loadPosts();
   }
@@ -23,14 +23,11 @@ class FirstPosts extends Component {
     }
     this.posts = posts;
   }
-
+//
   <template>
-    {{#each this.posts as |post|}}
       <div class="first-post-preview">
-        <h4>{{post.topic_title}}</h4>
-        {{{post.cooked}}}
+        <h4>My Race Data Community forum</h4>
       </div>
-    {{/each}}
   </template>;
 }
 
